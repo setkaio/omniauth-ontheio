@@ -25,7 +25,7 @@ module OmniAuth
       info { raw_info }
 
       def raw_info
-        { id: SecureRandom.random_number(10**21) }
+        { 'id' => SecureRandom.random_number(10**21) }
       end
     end
   end
