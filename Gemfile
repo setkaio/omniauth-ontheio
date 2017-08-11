@@ -1,4 +1,10 @@
-source 'https://rubygems.org'
+source "https://rubygems.org"
 
-# Specify your gem's dependencies in omniauth-ontheio.gemspec
+gem "rake"
+
+group :test do
+  gem "rspec"
+end
+
+# Specify your gem's dependencies in omniauth-amplifr.gemspec
 gemspec

@@ -1,7 +1,7 @@
 require "omniauth/ontheio/version"
+require "omniauth/strategies/ontheio"
 
-module Omniauth
+module OmniAuth
   module Ontheio
-    # Your code goes here...
   end
 end
