@@ -9,6 +9,7 @@ module OmniAuth
 
       option :client_options,
              site: 'https://onthe.io',
+             authorize_url: '/auth',
              token_url: '/auth'
 
       option :auth_token_params, {
