@@ -12,6 +12,8 @@ module OmniAuth
              authorize_url: '/auth',
              token_url: '/auth'
 
+      option :projects_info_url, 'https://onthe.io/auth'
+
       option :auth_token_params, {
         mode: :query,
         param_name: 'access_token'
@@ -23,10 +25,18 @@ module OmniAuth
 
       uid { info['id'] }
 
+      extra do
+        { raw_info: raw_info }
+      end
+
       info { raw_info }
 
       def raw_info
-        { 'id' => SecureRandom.random_number(10**21) }
+        projects_info = access_token.post(options[:projects_info_url]).parsed
+
+        {
+          'id' => projects_info['user_hash']
+        }
       end
     end
   end
